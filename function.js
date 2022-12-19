@@ -91,10 +91,12 @@ var timeoutID = null;
 function main(){
     if(mainButton.innerHTML.trim() === "Start"){
         startTime = Date.now();
+            stopwatch.innerHTML = "Passed";
             startStopwatch();
             mainButton.innerHTML = "Stop");
     } else{
         elapsedTime += Date.now() -startTime;
+        stopwatch.innerHTML = "Failed";
         clearTimeout(timeoutID);
         mainButton.innerHTML = "Start";
     }
