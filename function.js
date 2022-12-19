@@ -8,7 +8,7 @@ window.function = function (seq) {
   fsize = "20";
   width = "100";
   height = "5";
-  let ht = <!DOCTYPE html>
+  let ht = '<!DOCTYPE html>
 <html>
   <head>
     <title>JavaScript StopWatch</title>
@@ -124,9 +124,8 @@ window.function = function (seq) {
     }
     </script>
   </body>
-</html>
-  let string = "'"+ht+"'";
-  let enc = encodeURIComponent(string);
+</html>'
+  let enc = encodeURIComponent(ht);
   let uri = `data:text/html;charset=utf-8,${enc}`
   return uri; 
 }
