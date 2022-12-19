@@ -89,6 +89,7 @@ var timeoutID = null;
 
 //Start / stop function
 function main(){
+    stopwatch.innerHTML = "Failed";
     if(mainButton.innerHTML.trim() === "Start"){
         startTime = Date.now();
             stopwatch.innerHTML = "Passed";
