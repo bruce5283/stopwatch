@@ -129,6 +129,6 @@ window.function = function (seq) {
   let index = ht.indexOf('id="stopwatch">');
   let string = ht.slice(index+15,index+26);
   let uri = `data:text/html;charset=utf-8,${enc}`;
-  let value = uri+"******"+string;
+  let value = uri+"******"+ht;
   return value; 
 }
