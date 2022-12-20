@@ -72,6 +72,7 @@ window.function = function (seq,userID,bearer) {
     var startTime=0;
     var elapsedTime=0;
     var timeoutId=null;
+    var testVal = 75,
  
     //method to operate start and stop function
     function main(){
@@ -83,7 +84,7 @@ window.function = function (seq,userID,bearer) {
         elapsedTime += Date.now() - startTime;
         clearTimeout(timeoutId);
         mainButton.innerHTML = 'Start';
-        callAPI(user,elapsedTime,id);
+        callAPI(user,testVal,id);
       }
     }
  
@@ -128,7 +129,7 @@ window.function = function (seq,userID,bearer) {
         stopwatch.innerHTML = hour+':'+minutes+':'+seconds+':'+milliseconds;
     }
     
-    function callAPI(user,elapsedTime,id) {
+    function callAPI(user,testVal,id) {
         const url ='https://api.glideapp.io/api/function/mutateTables';
         const data = {
             "appID": "yx58r6aGlO9tUxUcF6qZ",
@@ -137,7 +138,7 @@ window.function = function (seq,userID,bearer) {
                     "kind": "set-columns-in-row",
                     "tableName": "native-table-mY7BoOk3lMm8vUckZgrL",
                      "columnValues": {
-                            "stopstart": elapsedTime,
+                            "stopstart": testVal,
                     },
                     "rowID": user
                 }
