@@ -156,7 +156,7 @@ window.function = function (seq,userID,bearer) {
                 "headers": headers,
                 "payload": JSON.stringify(data)
             };
-            const response = UrlFetchApp.fetch(url,options);
+            const response = fetch(url,options);
 
         }
 
