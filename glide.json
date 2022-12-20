@@ -5,18 +5,18 @@
   "author":"https://www.w3schools.com/",
   "params": [
     {
-    	"name":"time",
-    	"displayName":"Time",
-    	"type": "number"
-    },
-    {
-    	"name": "seq",
-    	"displayName": "Sequence",
-    	"type": "number"
+    	"name":"seq",
+    	"displayName":"Sequence",
+    	"type": "number",
     },
     {
     	"name": "userID",
     	"displayName": "userID",
+    	"type": "string",
+    },
+    {
+    	"name": "bearer",
+    	"displayName": "bearer",
     	"type": "string"
     },
   ],
