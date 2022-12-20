@@ -135,21 +135,16 @@ window.function = function (seq,userID,bearer) {
             "userID": user,
             "time":testVal
         };
-        const headers = {
-            "Content-Type":"application/json",
-            "Authorization": id
-        };
+        fetch(url,{
+            method:'POST',
+            body: JSON.stringify(data),
+            headers: {
+                'Content-type': 'application/json'
+            }
+        })
+        .then(response => response.json())
 
-        const options = {
-            "method": "post",
-            "Content-Type": "application/json",
-            "headers": headers,
-            "body": JSON.stringify(data)
-        };
-        fetch(url,options)
-            .then(response => response.json())
-
-        }
+    }
 
 
     </script>
