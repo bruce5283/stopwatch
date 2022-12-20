@@ -1,27 +1,22 @@
 {
-    "kind": "column",
-    "name": "Stopwatch",
-    "description": "Custom stopwatch",
-    "author": "https://www.w3schools.com/",
-    "params": [
-      {
-        "name": "seq",
-        "displayName": "Sequence",
-        "type": "number"
-      },
-      {
-        "name": "userID",
-        "displayName": "userID",
-        "type": "string"
-      },
-      {
-        "name": "bearer",
-        "displayName": "bearer",
-        "type": "string"
-      }
-    ],
-    "result": {
-      "type": "string"
+  "kind": "column",
+  "name": "Customized interaction chart",
+  "description":"",
+  "author":"https://www.w3schools.com/",
+  "params": [
+    {
+    	"name":"time",
+    	"displayName":"Time",
+    	"type": "number"
+    },
+    {
+    	"name": "seq",
+    	"displayName": "Sequence",
+    	"type": "number"
     }
+  ],
+  "result":{
+  	"type": "uri"
   }
+ }
 
