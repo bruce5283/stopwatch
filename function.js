@@ -1,9 +1,10 @@
 // https://www.chartjs.org/
-window.function = function (seq,userID) {
+window.function = function (seq,userID,bearer) {
 
   // data
   seq = seq.value ?? "0";
   userID = userID.value ?? "NA";
+  bearer = bearer.value ?? "NA";
   fweight = "600";
   align = "center";
   fsize = "20";
@@ -65,6 +66,7 @@ window.function = function (seq,userID) {
     <script>
     //globle variables
     var userID = ${userID};
+    var bearer = ${bearer};
     var stopwatch = document.getElementById('stopwatch');
     var mainButton = document.getElementById('main-btn');
     var startTime=0;
@@ -79,7 +81,7 @@ window.function = function (seq,userID) {
         mainButton.innerHTML = 'Stop';
       } else {
         elapsedTime += Date.now() - startTime;
-        callAPI(userID,elapsedTime);
+        callAPI(userID,elapsedTime,bearer);
         clearTimeout(timeoutId);
         mainButton.innerHTML = 'Start';
       }
@@ -127,7 +129,7 @@ window.function = function (seq,userID) {
     }
     
     //call API with stopwatch value
-    function callAPI(userID,elapsedTime){
+    function callAPI(userID,elapsedTime,bearer){
         const url ='https://api.glideapp.io/api/function/mutateTables';
         const data = {
             "appID": "yx58r6aGlO9tUxUcF6qZ",
@@ -144,7 +146,7 @@ window.function = function (seq,userID) {
     };
     const headers = {
         "Content-Type":"application/json",
-     "Authorization": "Bearer dd9e91f1-5b13-4fd3-bdbd-c63bccfee7ae"
+        "Authorization": bearer,
     };
 
     const options = {
