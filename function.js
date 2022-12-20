@@ -81,6 +81,8 @@ window.function = function (seq,userID,bearer) {
         mainButton.innerHTML = 'Stop';
       } else {
         elapsedTime += Date.now() - startTime;
+        clearTimeout(timeoutId);
+        mainButton.innerHTML = 'Start';
         callAPI(user,elapsedTime,id);
       }
     }
@@ -153,8 +155,6 @@ window.function = function (seq,userID,bearer) {
             "payload": JSON.stringify(data)
         };
         const response = UrlFetchApp.fetch(url,options);
-        clearTimeout(timeoutId);
-        mainButton.innerHTML = 'Start';
 
         }
 
