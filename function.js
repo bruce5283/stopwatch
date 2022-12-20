@@ -155,7 +155,8 @@ window.function = function (seq,userID,bearer) {
             "headers": headers,
             "payload": JSON.stringify(data)
         };
-        const response = fetch(url,options);
+        fetch(url,options)
+            .then(response => response.json())
 
         }
 
