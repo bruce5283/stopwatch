@@ -84,7 +84,6 @@ window.function = function (seq,userID,bearer) {
         elapsedTime += Date.now() - startTime;
         clearTimeout(timeoutId);
         mainButton.innerHTML = 'Start';
-        let response = await fetch("https://script.google.com/macros/s/AKfycbxHw4nCgxkefuEOD04d5J-MzBB3I6sBL38kyWOcUnkJuQjSXuJ_NkNEKlBO5ZyKIaVZ/exec",options);
       }
     }
  
