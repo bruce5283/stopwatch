@@ -139,13 +139,13 @@ window.function = function (seq,userID,bearer) {
                      "columnValues": {
                             "stopstart": elapsedTime,
                     },
-                    "rowID": ${userID}
+                    "rowID": "${userID}"
                 }
             ]
         };
         const headers = {
             "Content-Type":"application/json",
-            "Authorization": ${bearer}
+            "Authorization": "${bearer}"
         };
 
         const options = {
