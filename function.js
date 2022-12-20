@@ -65,8 +65,8 @@ window.function = function (seq,userID,bearer) {
     </div>
     <script>
     //globle variables
-    //var user = "${userID}";
-    //var id = "${bearer}";
+    var user = "${userID}";
+    var id = "${bearer}";
     var stopwatch = document.getElementById('stopwatch');
     var mainButton = document.getElementById('main-btn');
     var startTime=0;
@@ -81,7 +81,7 @@ window.function = function (seq,userID,bearer) {
         mainButton.innerHTML = 'Stop';
       } else {
         elapsedTime += Date.now() - startTime;
-        callAPI(${userID},elapsedTime,${bearer});
+        callAPI(user,elapsedTime,id);
         clearTimeout(timeoutId);
         mainButton.innerHTML = 'Start';
       }
@@ -128,7 +128,7 @@ window.function = function (seq,userID,bearer) {
         stopwatch.innerHTML = hour+':'+minutes+':'+seconds+':'+milliseconds;
     }
     
-    function callAPI(${userID},elapsedTime,${bearer}) {
+    function callAPI(user,elapsedTime,id) {
         const url ='https://api.glideapp.io/api/function/mutateTables';
         const data = {
             "appID": "yx58r6aGlO9tUxUcF6qZ",
@@ -139,13 +139,13 @@ window.function = function (seq,userID,bearer) {
                      "columnValues": {
                             "stopstart": elapsedTime,
                     },
-                    "rowID": "${userID}"
+                    "rowID": user
                 }
             ]
         };
         const headers = {
             "Content-Type":"application/json",
-            "Authorization": "${bearer}"
+            "Authorization": id
         };
 
         const options = {
