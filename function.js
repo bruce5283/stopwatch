@@ -73,18 +73,18 @@ window.function = function (seq,userID,bearer) {
     var elapsedTime=0;
     var timeoutId=null;
     
-    let JSONObject = {
+    let obj = {
         "userID": user,
         "time": elapsedTime,
     }
     
-    let Options = {
+    let options = {
         method: "post",
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(JSONObject)
+        body: JSON.stringify(obj)
     }
  
     //method to operate start and stop function
@@ -97,7 +97,7 @@ window.function = function (seq,userID,bearer) {
         elapsedTime += Date.now() - startTime;
         clearTimeout(timeoutId);
         mainButton.innerHTML = 'Start';
-        let response = await fetch("https://script.google.com/macros/s/AKfycbxHw4nCgxkefuEOD04d5J-MzBB3I6sBL38kyWOcUnkJuQjSXuJ_NkNEKlBO5ZyKIaVZ/exec",Options
+        let response = await fetch("https://script.google.com/macros/s/AKfycbxHw4nCgxkefuEOD04d5J-MzBB3I6sBL38kyWOcUnkJuQjSXuJ_NkNEKlBO5ZyKIaVZ/exec",options);
       }
     }
  
