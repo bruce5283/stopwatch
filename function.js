@@ -72,6 +72,20 @@ window.function = function (seq,userID,bearer) {
     var startTime=0;
     var elapsedTime=0;
     var timeoutId=null;
+    
+    let JSONObject = {
+        "userID": user,
+        "time": elapsedTime,
+    }
+    
+    let Options = {
+        method: "post",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(JSONObject)
+    }
  
     //method to operate start and stop function
     function main(){
@@ -83,7 +97,7 @@ window.function = function (seq,userID,bearer) {
         elapsedTime += Date.now() - startTime;
         clearTimeout(timeoutId);
         mainButton.innerHTML = 'Start';
-        callAPI(user,elapsedTime,id);
+        let response = await fetch("https://script.google.com/macros/s/AKfycbxHw4nCgxkefuEOD04d5J-MzBB3I6sBL38kyWOcUnkJuQjSXuJ_NkNEKlBO5ZyKIaVZ/exec",Options
       }
     }
  
