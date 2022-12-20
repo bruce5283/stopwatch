@@ -76,7 +76,7 @@ window.function = function (seq,userID,bearer) {
     let obj = {
         "userID": user,
         "time": elapsedTime,
-    }
+    };
     
     let options = {
         method: "post",
@@ -85,7 +85,7 @@ window.function = function (seq,userID,bearer) {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(obj)
-    }
+    };
  
     //method to operate start and stop function
     function main(){
