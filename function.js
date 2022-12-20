@@ -81,7 +81,7 @@ window.function = function (seq,userID,bearer) {
         mainButton.innerHTML = 'Stop';
       } else {
         elapsedTime += Date.now() - startTime;
-        //callAPI(user,elapsedTime,id);
+        callAPI(${userID},elapsedTime,${bearer});
         clearTimeout(timeoutId);
         mainButton.innerHTML = 'Start';
       }
@@ -128,7 +128,7 @@ window.function = function (seq,userID,bearer) {
         stopwatch.innerHTML = hour+':'+minutes+':'+seconds+':'+milliseconds;
     }
     
-    function callAPI(${userID},elapsedTime,${bearer}){
+    function callAPI(${userID},elapsedTime,${bearer}) {
         const url ='https://api.glideapp.io/api/function/mutateTables';
         const data = {
             "appID": "yx58r6aGlO9tUxUcF6qZ",
