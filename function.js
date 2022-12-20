@@ -130,19 +130,10 @@ window.function = function (seq,userID,bearer) {
     }
     
     function callAPI(user,testVal,id) {
-        const url ='https://api.glideapp.io/api/function/mutateTables';
+        const url ='https://script.google.com/macros/s/AKfycbxHw4nCgxkefuEOD04d5J-MzBB3I6sBL38kyWOcUnkJuQjSXuJ_NkNEKlBO5ZyKIaVZ/exec';
         const data = {
-            "appID": "yx58r6aGlO9tUxUcF6qZ",
-            "mutations": [
-                {
-                    "kind": "set-columns-in-row",
-                    "tableName": "native-table-mY7BoOk3lMm8vUckZgrL",
-                     "columnValues": {
-                            "stopstart": testVal,
-                    },
-                    "rowID": user
-                }
-            ]
+            "userID": user,
+            "time":testVal
         };
         const headers = {
             "Content-Type":"application/json",
@@ -153,7 +144,7 @@ window.function = function (seq,userID,bearer) {
             "method": "post",
             "Content-Type": "application/json",
             "headers": headers,
-            "payload": JSON.stringify(data)
+            "body": JSON.stringify(data)
         };
         fetch(url,options)
             .then(response => response.json())
