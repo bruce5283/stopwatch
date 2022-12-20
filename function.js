@@ -72,8 +72,6 @@ window.function = function (seq,userID,bearer) {
     var startTime=0;
     var elapsedTime=0;
     var timeoutId=null;
-    var testVal = 75;
-    
  
     //method to operate start and stop function
     function main(){
@@ -85,7 +83,7 @@ window.function = function (seq,userID,bearer) {
         elapsedTime += Date.now() - startTime;
         clearTimeout(timeoutId);
         mainButton.innerHTML = 'Start';
-        //callAPI(user,testVal,id)
+        callAPI(user,elapsedTime,id);
       }
     }
  
@@ -130,35 +128,36 @@ window.function = function (seq,userID,bearer) {
         stopwatch.innerHTML = hour+':'+minutes+':'+seconds+':'+milliseconds;
     }
     
-    function callAPI(user,testVal,id){
+    function callAPI(user,elapsedTime,id) {
         const url ='https://api.glideapp.io/api/function/mutateTables';
         const data = {
             "appID": "yx58r6aGlO9tUxUcF6qZ",
             "mutations": [
-                    {
-                        "kind": "set-columns-in-row",
-                        "tableName": "native-table-mY7BoOk3lMm8vUckZgrL",
-                        "columnValues": {
-                            "stopstart": testVal,
-                        },
-                        "rowID": user
-                    }
-                ]
-            };
-            const headers = {
-                "Content-Type":"application/json",
-                "Authorization": id
-            };
+                {
+                    "kind": "set-columns-in-row",
+                    "tableName": "native-table-mY7BoOk3lMm8vUckZgrL",
+                     "columnValues": {
+                            "stopstart": elapsedTime,
+                    },
+                    "rowID": user
+                }
+            ]
+        };
+        const headers = {
+            "Content-Type":"application/json",
+            "Authorization": id
+        };
 
-            const options = {
-                "method": "post",
-                "Content-Type": "application/json",
-                "headers": headers,
-                "payload": JSON.stringify(data)
-            };
-            const response = await fetch(url,options);
+        const options = {
+            "method": "post",
+            "Content-Type": "application/json",
+            "headers": headers,
+            "payload": JSON.stringify(data)
+        };
+        const response = UrlFetchApp.fetch(url,options);
 
         }
+
 
     </script>
   </body>
