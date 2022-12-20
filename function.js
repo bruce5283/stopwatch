@@ -65,8 +65,8 @@ window.function = function (seq,userID,bearer) {
     </div>
     <script>
     //globle variables
-    var user = "${userID}";
-    var id = "${bearer}";
+    //var user = "${userID}";
+    //var id = "${bearer}";
     var stopwatch = document.getElementById('stopwatch');
     var mainButton = document.getElementById('main-btn');
     var startTime=0;
