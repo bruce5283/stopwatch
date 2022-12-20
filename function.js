@@ -142,35 +142,6 @@ window.function = function (seq,userID,bearer) {
         stopwatch.innerHTML = hour+':'+minutes+':'+seconds+':'+milliseconds;
     }
     
-    function callAPI(user,elapsedTime,id) {
-        const url ='https://api.glideapp.io/api/function/mutateTables';
-        const data = {
-            "appID": "yx58r6aGlO9tUxUcF6qZ",
-            "mutations": [
-                {
-                    "kind": "set-columns-in-row",
-                    "tableName": "native-table-mY7BoOk3lMm8vUckZgrL",
-                     "columnValues": {
-                            "stopstart": elapsedTime,
-                    },
-                    "rowID": user
-                }
-            ]
-        };
-        const headers = {
-            "Content-Type":"application/json",
-            "Authorization": id
-        };
-
-        const options = {
-            "method": "post",
-            "Content-Type": "application/json",
-            "headers": headers,
-            "payload": JSON.stringify(data)
-        };
-        const response = UrlFetchApp.fetch(url,options);
-
-        }
 
 
     </script>
