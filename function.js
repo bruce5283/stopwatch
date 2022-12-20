@@ -85,7 +85,7 @@ window.function = function (seq,userID,bearer) {
         elapsedTime += Date.now() - startTime;
         clearTimeout(timeoutId);
         mainButton.innerHTML = 'Start';
-        callAPI(user,testVal,id)
+        //callAPI(user,testVal,id)
       }
     }
  
