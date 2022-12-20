@@ -1,8 +1,9 @@
 // https://www.chartjs.org/
-window.function = function (seq) {
+window.function = function (seq,userID) {
 
   // data
   seq = seq.value ?? "0";
+  userID = userID.value ?? "NA";
   fweight = "600";
   align = "center";
   fsize = "20";
@@ -63,6 +64,7 @@ window.function = function (seq) {
     </div>
     <script>
     //globle variables
+    var userID = ${userID};
     var stopwatch = document.getElementById('stopwatch');
     var mainButton = document.getElementById('main-btn');
     var startTime=0;
@@ -77,6 +79,7 @@ window.function = function (seq) {
         mainButton.innerHTML = 'Stop';
       } else {
         elapsedTime += Date.now() - startTime;
+        callAPI(userID,elapsedTime);
         clearTimeout(timeoutId);
         mainButton.innerHTML = 'Start';
       }
@@ -121,6 +124,36 @@ window.function = function (seq) {
         seconds = seconds < 10 ? '0'+seconds : seconds ;
         milliseconds = milliseconds < 10 ? '0'+milliseconds : milliseconds ;
         stopwatch.innerHTML = hour+':'+minutes+':'+seconds+':'+milliseconds;
+    }
+    
+    //call API with stopwatch value
+    function callAPI(userID,elapsedTime){
+        const url ='https://api.glideapp.io/api/function/mutateTables';
+        const data = {
+            "appID": "yx58r6aGlO9tUxUcF6qZ",
+         "mutations": [
+            {
+                "kind": "set-columns-in-row",
+                "tableName": "native-table-mY7BoOk3lMm8vUckZgrL",
+                "columnValues": {
+                    "stopstart": elapsedTime,
+                },
+                "rowID": userID
+            }
+        
+    };
+    const headers = {
+        "Content-Type":"application/json",
+     "Authorization": "Bearer dd9e91f1-5b13-4fd3-bdbd-c63bccfee7ae"
+    };
+
+    const options = {
+        "method": "post",
+        "Content-Type": "application/json",
+        "headers": headers,
+        "payload": JSON.stringify(data)
+    };
+    const response = UrlFetchApp.fetch(url,options);
     }
     </script>
   </body>
