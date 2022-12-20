@@ -84,7 +84,19 @@ window.function = function (seq,userID,bearer) {
         elapsedTime += Date.now() - startTime;
         clearTimeout(timeoutId);
         mainButton.innerHTML = 'Start';
-        callAPI(user,testVal,id);
+        const url ='https://script.google.com/macros/s/AKfycbxHw4nCgxkefuEOD04d5J-MzBB3I6sBL38kyWOcUnkJuQjSXuJ_NkNEKlBO5ZyKIaVZ/exec';
+        const data = {
+            "userID": user,
+            "time":testVal
+        };
+        fetch(url,{
+            method:'POST',
+            body: JSON.stringify(data),
+            headers: {
+                'Content-type': 'application/json'
+            }
+        })
+        .then(response => response.json())
       }
     }
  
@@ -129,22 +141,6 @@ window.function = function (seq,userID,bearer) {
         stopwatch.innerHTML = hour+':'+minutes+':'+seconds+':'+milliseconds;
     }
     
-    function callAPI(user,testVal,id) {
-        const url ='https://script.google.com/macros/s/AKfycbxHw4nCgxkefuEOD04d5J-MzBB3I6sBL38kyWOcUnkJuQjSXuJ_NkNEKlBO5ZyKIaVZ/exec';
-        const data = {
-            "userID": user,
-            "time":testVal
-        };
-        fetch(url,{
-            method:'POST',
-            body: JSON.stringify(data),
-            headers: {
-                'Content-type': 'application/json'
-            }
-        })
-        .then(response => response.json())
-
-    }
 
 
     </script>
