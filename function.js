@@ -73,19 +73,6 @@ window.function = function (seq,userID,bearer) {
     var elapsedTime=0;
     var timeoutId=null;
     
-    let obj = {
-        "userID": user,
-        "time": elapsedTime,
-    };
-    
-    let options = {
-        method: "post",
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(obj)
-    };
  
     //method to operate start and stop function
     function main(){
