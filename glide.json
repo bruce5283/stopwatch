@@ -1,5 +1,4 @@
-[
-  {
+{
     "kind": "column",
     "name": "Stopwatch",
     "description": "Custom stopwatch",
@@ -25,4 +24,4 @@
       "type": "string"
     }
   }
-]
+
