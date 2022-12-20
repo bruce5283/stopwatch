@@ -81,7 +81,7 @@ window.function = function (seq,userID,bearer) {
         mainButton.innerHTML = 'Stop';
       } else {
         elapsedTime += Date.now() - startTime;
-        callAPI(user,elapsedTime,id);
+        //callAPI(user,elapsedTime,id);
         clearTimeout(timeoutId);
         mainButton.innerHTML = 'Start';
       }
