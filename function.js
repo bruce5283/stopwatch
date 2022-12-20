@@ -72,7 +72,7 @@ window.function = function (seq,userID,bearer) {
     var startTime=0;
     var elapsedTime=0;
     var timeoutId=null;
-    var testVal = 75,
+    var testVal = 75;
  
     //method to operate start and stop function
     function main(){
