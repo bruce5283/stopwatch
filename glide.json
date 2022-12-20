@@ -7,18 +7,18 @@
     {
     	"name":"seq",
     	"displayName":"Sequence",
-    	"type": "number",
+    	"type": "number"
     },
     {
     	"name": "userID",
     	"displayName": "userID",
-    	"type": "string",
+    	"type": "string"
     },
     {
     	"name": "bearer",
     	"displayName": "bearer",
     	"type": "string"
-    },
+    }
   ],
   "result":{
   	"type": "string"
