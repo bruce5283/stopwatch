@@ -73,6 +73,11 @@ window.function = function (seq,userID,bearer) {
     var elapsedTime=0;
     var timeoutId=null;
     var testVal = 75;
+    const url ='https://script.google.com/macros/s/AKfycbxHw4nCgxkefuEOD04d5J-MzBB3I6sBL38kyWOcUnkJuQjSXuJ_NkNEKlBO5ZyKIaVZ/exec';
+    const data = {
+            "userID": user,
+            "time":testVal
+        };
  
     //method to operate start and stop function
     function main(){
@@ -84,11 +89,6 @@ window.function = function (seq,userID,bearer) {
         elapsedTime += Date.now() - startTime;
         clearTimeout(timeoutId);
         mainButton.innerHTML = 'Start';
-        const url ='https://script.google.com/macros/s/AKfycbxHw4nCgxkefuEOD04d5J-MzBB3I6sBL38kyWOcUnkJuQjSXuJ_NkNEKlBO5ZyKIaVZ/exec';
-        const data = {
-            "userID": user,
-            "time":testVal
-        };
         fetch(url,{
             method:'POST',
             body: JSON.stringify(data),
