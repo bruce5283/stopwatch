@@ -30,6 +30,7 @@ window.function = function (seq,userID,bearer) {
       margin: 0 auto;
       text-align: center;
       font-size: 60px;
+      color: #12A89E;
     }
  
     #buttons-container {
@@ -42,7 +43,7 @@ window.function = function (seq,userID,bearer) {
       outline: none;
       cursor: pointer;
       color: #fff;
-      background-color:#000;
+      background-color: #12A89E;
       border: none;
       border-radius: 5px;
       font-size: 20px;
