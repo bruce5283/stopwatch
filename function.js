@@ -21,6 +21,7 @@ window.function = function (seq,userID,bearer) {
       flex-direction: column;
       margin: 100px auto 0;
       width: fit-content;
+      height: 5vh;
       padding: 10px 20px;
       box-shadow: 1px 0px 4px 2px #9c9a9a;
       border-radius: 5px;
@@ -29,7 +30,7 @@ window.function = function (seq,userID,bearer) {
     #stopwatch {
       margin: 0 auto;
       text-align: center;
-      font-size: 60px;
+      font-size: 25px;
       color: #12A89E;
     }
  
